@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Web Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .logo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .main-image {
+            height: 700px;
+            background: url('images/space-art-2.jpg') center center no-repeat;
+            background-size: cover;
+            opacity: 0.9;
+            display: flex;
+            justify-content: start;
+            align-items: end;
+        }
+        .second-image {
+            height: 800px;
+            background: url('images/space-art-5.jpg') center center no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .third-image {
+            height: 800px;
+            background: url('images/space-art-6.jpg') center center no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .fourth-image {
+            height: 800px;
+            background: url('images/space-art-7.jpg') center center no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-text {
+            margin-bottom: 60px;
+        }
+        .gambar-card-1 {
+            height: 340px;
+            background: url('images/space-art-1.jpg') center center no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .gambar-card-2 {
+            height: 340px;
+            background: url('images/space-art-3.jpg') center center no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .gambar-card-3 {
+            height: 340px;
+            background: url('images/space-art-4.jpg') center center no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .animKlik {
+            min-width: 320px !important;
+        }
+        .animKlik:hover {
+            animation: pulse 1.66s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+@keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.75;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-neutral-950 text-slate-100">
+    <nav class="border-neutral-200 bg-neutral-900 transition-all">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 transition-all">
+            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="images/tailwind.png" class="h-8" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Template</span>
+            </a>
+            <div class="flex md:order-2">
+                <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none focus:ring-4 focus:ring-neutral-200 dark:focus:ring-neutral-700 rounded-lg text-sm p-2.5 me-1">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                    <span class="sr-only">Search</span>
+                </button>
+                <div class="relative hidden md:block">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-neutral-500 dark:text-neutral-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                        <span class="sr-only">Search icon</span>
+                    </div>
+                    <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-neutral-900 border border-neutral-300 rounded-lg bg-neutral-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
+                </div>
+                <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-500 rounded-lg md:hidden hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:ring-neutral-600" aria-controls="navbar-search" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 transition-all" id="navbar-search">
+                <div class="relative mt-3 md:hidden transition-all">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-neutral-500 dark:text-neutral-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-neutral-200 border border-neutral-500 rounded-lg bg-neutral-700 focus:ring-slate-500 focus:border-blue-500" placeholder="Search...">
+                </div>
+                <ul class="flex flex-col bg-neutral-800 p-4 md:p-0 mt-4 font-medium border border-neutral-600 rounded-lg lg:bg-transparent md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-700">
+                    <li>
+                        <a href="#home" class="block py-2 px-3 text-neutral-400 bg-neutral-700 rounded md:bg-transparent md:text-blue-700 md:p-0" aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="block py-2 px-3 text-neutral-300 rounded hover:bg-neutral-600 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">About</a>
+                    </li>
+                    <li>
+                        <a href="#services" class="block py-2 px-3 text-neutral-300 rounded hover:bg-neutral-600 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Services</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="block py-2 px-3 text-neutral-300 rounded hover:bg-neutral-600 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="home" class="main-image p-5">
+        <div class="main-text p-2 grid">
+            <div class="lg:w-1/2">
+                <p data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500" class="text-slate-100 font-bold text-5xl">
+                    Always Be Moving Forward.
+                </p>
+            </div>
+            <div class="lg:w-1/2">
+                <blockquote data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="800" class="text-1xl font-semibold">
+                    <q class="text-slate-200"><i>Janganlah pernah menyerah ketika kamu masih mampu berusaha lagi. Tidak ada kata berakhir sampai kamu berhenti mencoba.</i></q> - Brian Dyson
+                </blockquote>
+            </div>
+            <div class="lg:w-1/2">
+                <p data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="1000" class="text-slate-300 font-bold text-2xl mb-5">
+                    No Pain, No Gain!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <a data-aos="flip-left" data-aos-easing="ease-in-out" data-aos-duration="500" href="#" class="flex z-50 items-center fixed bottom-5 right-5 bg-blue-400 rounded-full p-1 hover:bg-blue-600 hover:scale-105 transition-all lg:hidden">
+        <span class="text-lg font-bold">Page Up</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
+            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.72-1.72v5.69a.75.75 0 0 0 1.5 0v-5.69l1.72 1.72a.75.75 0 1 0 1.06-1.06l-3-3Z" clip-rule="evenodd" />
+        </svg>
+    </a>
+
+    <div data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1000" class="container p-5 my-10">
+        <div class="hover:shadow-sm hover:shadow-yellow-400/75 hover:scale-105 gambar-card-1 max-w-screen-md mx-auto my-8 p-4 border-1 border-neutral-900 rounded-lg transition duration-400 ease-in group">
+            <div class="header flex justify-between space-between">
+                <div class="judul-besar">
+                    <h3 class="text-4xl text-neutral-200 font-bold group-hover:text-5xl transition-all">Judul Besar</h3>
+                </div>
+                <div class="logo">
+                    <img src="images/tailwind.png" alt="" height="50" width="50" />
+                </div>
+            </div>
+            <div class="footer bg-neutral-900/50 p-3 rounded-md">
+                <h4 class="text-2xl text-neutral-200 font-semibold">Sub-Judul</h4>
+                <p class="text-neutral-300">
+                    Sed ut massa urna. Suspendisse orci nibh, lacinia quis tortor et, iaculis semper nibh. Maecenas vitae urna posuere quam semper imperdiet. Ut mattis luctus risus at lacinia.
+                </p>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1000" class="hover:shadow-sm hover:shadow-yellow-400/75 hover:scale-105 gambar-card-2 max-w-screen-md mx-auto my-8 p-4 border-1 border-neutral-900 rounded-lg transition duration-400 ease-in group">
+            <div class="header flex justify-between space-between">
+                <div class="judul-besar">
+                    <h3 class="text-4xl text-neutral-200 font-bold group-hover:text-5xl transition-all">Judul Besar</h3>
+                </div>
+                <div class="logo">
+                    <img src="images/tailwind.png" alt="" height="50" width="50" />
+                </div>
+            </div>
+            <div class="footer bg-neutral-900/50 p-3 rounded-md">
+                <h4 class="text-2xl text-neutral-200 font-semibold">Sub-Judul</h4>
+                <p class="text-neutral-300">
+                    Sed ut massa urna. Suspendisse orci nibh, lacinia quis tortor et, iaculis semper nibh. Maecenas vitae urna posuere quam semper imperdiet. Ut mattis luctus risus at lacinia.
+                </p>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1000" class="hover:shadow-sm hover:shadow-yellow-400/75 hover:scale-105 gambar-card-3 max-w-screen-md mx-auto my-8 p-4 border-1 border-neutral-900 rounded-lg transition duration-400 ease-in group">
+            <div class="header flex justify-between space-between">
+                <div class="judul-besar">
+                    <h3 class="text-4xl text-neutral-200 font-bold group-hover:text-5xl transition-all">Judul Besar</h3>
+                </div>
+                <div class="logo">
+                    <img src="images/tailwind.png" alt="" height="50" width="50" />
+                </div>
+            </div>
+            <div class="footer bg-neutral-900/50 p-3 rounded-md">
+                <h4 class="text-2xl text-neutral-200 font-semibold">Sub-Judul</h4>
+                <p class="text-neutral-300">
+                    Sed ut massa urna. Suspendisse orci nibh, lacinia quis tortor et, iaculis semper nibh. Maecenas vitae urna posuere quam semper imperdiet. Ut mattis luctus risus at lacinia.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="second-image p-3 my-10">
+        <div class="about-image" id="about-image">
+            <h1 data-aos="flip-right" data-aos-easing="ease-in-out" data-aos-duration="1000" class="bg-clip-text text-transparent bg-gradient-to-l from-sky-500 to-indigo-700  text-5xl text-center font-bold font-serif">About Me</h1>
+            <div class="flex gap-5">
+                <a data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="500" href="#" class="text-lg font-serif font-bold text-neutral-200 hover:scale-125 hover:font-sans transition-all">Info</a>
+                <a data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="1000" href="#" class="text-lg font-serif font-bold text-neutral-200 hover:scale-125 hover:font-sans transition-all">Address</a>
+                <a data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="1500" href="#" class="text-lg font-serif font-bold text-neutral-200 hover:scale-125 hover:font-sans transition-all">School</a>
+                <a data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="2000" href="#" class="text-lg font-serif font-bold text-neutral-200 hover:scale-125 hover:font-sans transition-all">Skills</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container about max-w-screen-xl mx-auto my-8">
+        <div class="columns-md p-5">
+            <div data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="300" class="bg-neutral-800 p-4 mb-6 rounded-md p-2 min-h-80">
+                <div class="header text-center">
+                    <h1 data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="700" class="judul text-2xl font-bold text-neutral-200">
+                        Info
+                    </h1>
+                </div>
+                <br />
+                <div class="content bg-neutral-700 p-3 rounded-md">
+                    <p data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="1000" class="font-serif text-neutral-300">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis semper magna, in maximus felis. <a class="text-sky-400 after:content-['_↗'] ..." href="https://www.apple.com/pro-display-xdr/" target="_blank">Vivamus dapibus</a> Suspendisse potenti. Praesent sagittis placerat magna at dapibus. Nunc vitae ipsum odio. Nullam a quam pharetra, cursus ligula id, vulputate erat. Vestibulum non ante vitae arcu semper pretium. Aliquam ante metus, feugiat vitae eleifend in, venenatis in massa. Aliquam suscipit porttitor erat vitae posuere.
+                    </p>
+                </div>
+            </div>
+            <div data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="300" class="bg-neutral-800 p-4 mb-6 rounded-md p-2 min-h-80">
+                <div class="header text-center">
+                    <h1 data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="700" class="judul text-2xl font-bold text-neutral-200">
+                        Address
+                    </h1>
+                </div>
+                <br />
+                <div class="content bg-neutral-700 p-3 rounded-md">
+                    <p data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="1000" class="font-serif text-neutral-300">
+                        Donec sed enim varius, laoreet risus sit amet, dapibus nunc. Vivamus sagittis nisl augue, a pretium quam mattis sed. Ut mi felis, volutpat ac augue ut, elementum finibus nunc. In feugiat enim quis congue sagittis. Nullam ex lectus, fermentum eget mauris vitae, venenatis aliquam augue.
+                    </p>
+                </div>
+            </div>
+            <div data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="300" class="bg-neutral-800 p-4 mb-6 rounded-md p-2 min-h-80">
+                <div class="header text-center">
+                    <h1 data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="700" class="judul text-2xl font-bold text-neutral-200">
+                        School
+                    </h1>
+                </div>
+                <br />
+                <div class="content bg-neutral-700 p-3 rounded-md">
+                    <p data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="1000" class="font-serif text-neutral-300">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et magna commodo, cursus augue tempor, consectetur risus. Quisque metus metus, ultrices non neque ut, suscipit elementum quam. Maecenas suscipit ligula eget justo scelerisque, ac iaculis ante viverra. Suspendisse rutrum libero lorem, id tincidunt dolor placerat ac.
+                    </p>
+                </div>
+            </div>
+            <div data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="300" class="bg-neutral-800 p-4 mb-6 rounded-md p-2 min-h-80">
+                <div class="header text-center">
+                    <h1 data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="700" class="judul text-2xl font-bold text-neutral-200">
+                        Skills
+                    </h1>
+                </div>
+                <br />
+                <div class="content bg-neutral-700 p-3 rounded-md">
+                    <p data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-duration="1000" class="font-serif text-neutral-300">
+                        Pellentesque vel pharetra lorem, vel rutrum quam. Nam sit amet risus et turpis sodales bibendum. Phasellus at porta mauris. Cras eu orci sit amet sapien feugiat aliquet. Etiam hendrerit non magna id viverra. Sed eu urna mattis, suscipit dui eget, feugiat leo. Nullam id auctor tortor. Pellentesque dictum purus arcu, nec hendrerit purus vehicula eu. Nunc pellentesque id purus ac ultrices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services" class="third-image p-3 mt-10">
+        <h1 data-aos="zoom-out" data-aos-easing="ease-in-out" data-aos-duration="800" class="text-4xl font-bold font-serif text-center bg-clip-text text-transparent bg-gradient-to-l from-yellow-500 to-pink-600">Our Services</h1>
+    </div>
+
+    <div class="bg-neutral-900">
+        <div class="p-3 mx-auto my-4 max-w-screen-xl">
+            <h2 class="text-2xl font-serif font-bold">Our Services Divides by 3 Package</h2>
+            <br />
+            <p class="font-sans">
+                Suspendisse quam velit, volutpat eu varius sit amet, imperdiet cursus massa. Fusce auctor lectus vitae libero congue cursus. Nunc id dolor vel nisl finibus tincidunt. Donec eu purus sed mi posuere finibus sed at ante. Praesent ornare tempus diam, sit amet molestie purus aliquam eu. In ac vestibulum diam.
+            </p>
+            <br />
+            <div class="container mx-auto p-2 lg:p-10">
+                <h2 class="text-2xl font-sans text-center">Free Package Ratings</h2>
+                <div class="flex items-center mb-2">
+                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                        4.90
+                    </p>
+                    <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                        out of
+                    </p>
+                    <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                        5
+                    </p>
+                </div>
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    1,745 global ratings
+                </p>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">5 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 65%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">65%</span>
+                </div>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">4 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 19%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">19%</span>
+                </div>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">3 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 11%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">11%</span>
+                </div>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">2 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 4%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">4%</span>
+                </div>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">1 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 1%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">1%</span>
+                </div>
+                <br />
+                <br />
+
+                <h2 class="text-2xl font-sans text-center">Premium Package Ratings</h2>
+                <div class="flex items-center mb-2">
+                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                        4.89
+                    </p>
+                    <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                        out of
+                    </p>
+                    <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                        5
+                    </p>
+                </div>
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    4,295 global ratings
+                </p>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">5 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 70%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">70%</span>
+                </div>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">4 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 17%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">17%</span>
+                </div>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">3 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 8%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">8%</span>
+                </div>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">2 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 4%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">4%</span>
+                </div>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">1 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 1%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">1%</span>
+                </div>
+                <br />
+                <br />
+
+                <h2 class="text-2xl font-sans text-center">Ultra Package Ratings</h2>
+                <div class="flex items-center mb-2">
+                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                        4.69
+                    </p>
+                    <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                        out of
+                    </p>
+                    <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                        5
+                    </p>
+                </div>
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    835 global ratings
+                </p>
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">5 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 73%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">73%</span>
+                </div>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">4 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 14%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">14%</span>
+                </div>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">3 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 7%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">7%</span>
+                </div>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">2 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 5%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">5%</span>
+                </div>
+
+                <div class="flex items-center mt-4">
+                    <a href="#" class="text-sm text-nowrap font-medium text-blue-600 dark:text-blue-500 hover:underline">1 star</a>
+                    <div class="w-full h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                        <div class="h-5 bg-yellow-300 rounded" style="width: 1%"></div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">1%</span>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+
+        <div class="flex p-5 gap-8 relative overflow-x-auto ">
+            <div data-aos="flip-right" data-aos-easing="ease-in-out" data-aos-duration="1000" class="animKlik p-4 hover:scale-105 transition duration-600 ease-out bg-gradient-to-r from-slate-700 to-neutral-700 rounded-md p-3">
+                <h1 class="text-4xl font-bold">Free Package Services</h1>
+                <p class="font-serif font-bold text-3xl text-neutral-400">
+                    $0.00<span class="text-sm font-semibold font-serif">/month</span>
+                </p>
+                <br />
+
+                <ul class="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
+                    <li class="flex items-center">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Medium transfer speed
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Medium internet speed
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        4GB Avaible storage
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        2GB Avaible RAM
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-3.5 h-3.5 me-2 text-gray-500 dark:text-gray-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        No Ads
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-3.5 h-3.5 me-2 text-gray-500 dark:text-gray-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Extra Utilities
+                    </li>
+                </ul>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <button data-popover-target="popover-default" type="button" class="block mx-auto flex text-white text-2xl bg-neutral-700 hover:bg-neutral-800 focus:ring-2 focus:outline-none focus:ring-slate-600 rounded-lg text-sm px-5 py-2.5 text-center dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-slate-800 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd" />
+                    </svg>
+                    Active
+                </button>
+                <div data-popover id="popover-default" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                        <h3 class="font-semibold text-gray-900 dark:text-white">Attention!</h3>
+                    </div>
+                    <div class="px-3 py-2">
+                        <p>
+                            You're already choose this package.
+                        </p>
+                    </div>
+                    <div data-popper-arrow></div>
+                </div>
+
+            </div>
+            <div data-aos="flip-right" data-aos-easing="ease-in-out" data-aos-duration="1000" class="animKlik p-4 hover:scale-105 transition duration-600 ease-out w-full bg-gradient-to-r from-gray-200 to-slate-400 rounded-md p-3">
+                <h1 class="text-3xl font-bold text-neutral-600">Premium Package Services</h1>
+                <p class="font-serif font-bold text-3xl text-neutral-700">
+                    $21.99<span class="text-sm font-semibold font-serif">/month</span>
+                </p>
+                <br />
+
+                <ul class="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
+                    <li class="flex items-center text-neutral-700">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Fast transfer speed
+                    </li>
+                    <li class="flex items-center text-neutral-700">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Fast internet speed
+                    </li>
+                    <li class="flex items-center text-neutral-700">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        8GB Avaible storage
+                    </li>
+                    <li class="flex items-center text-neutral-700">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        4GB Avaible RAM
+                    </li>
+                    <li class="flex items-center text-neutral-700">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        No Ads
+                    </li>
+                    <li class="flex items-center text-neutral-700">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Extra Utilities
+                    </li>
+                    <li class="flex items-center text-neutral-700">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        +2 Avaible crew member
+                    </li>
+                    <li class="flex items-center text-neutral-700">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        AI Copilot for managing and handling
+                    </li>
+                </ul>
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <button type="button" id="pricingCardOne" class="block mx-auto bg-neutral-800 text-neutral-200 my-10 py-2 px-10 rounded-lg hover:bg-neutral-900 hover:scale-125 transition-all">Order</button>
+
+            </div>
+            <div data-aos="flip-right" data-aos-easing="ease-in-out" data-aos-duration="1000" class="animKlik p-4 hover:scale-105 transition duration-600 ease-out w-full bg-gradient-to-r from-yellow-400 to-indigo-500 rounded-md p-3">
+                <h1 class="text-3xl font-bold text-neutral-800">Ultra Package Services</h1>
+                <p class="font-serif font-semibold text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-500">
+                    $34.99<span class="text-sm font-semibold font-serif">/month</span>
+                </p>
+                <br />
+
+                <ul class="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
+                    <li class="flex items-center text-neutral-800">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Super Fast Transfer Speed
+                    </li>
+                    <li class="flex items-center text-neutral-800">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Super Fast Loadout Speed
+                    </li>
+                    <li class="flex items-center text-neutral-800">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Super Fast Internet Speed
+                    </li>
+                    <li class="flex items-center text-neutral-800">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        16GB Avaible Storage
+                    </li>
+                    <li class="flex items-center text-neutral-800">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        8GB Avaible RAM
+                    </li>
+                    <li class="flex items-center text-neutral-800">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        No Ads
+                    </li>
+                    <li class="flex items-center text-neutral-800">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Extra Utilities
+                    </li>
+                    <li class="flex items-center text-neutral-800">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        +3 Avaible Crew Member
+                    </li>
+                    <li class="flex items-center text-neutral-800">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        AI Copilot For Managing and handling
+                    </li>
+                    <li class="flex items-center text-neutral-800">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        AI Assistent for Fast Controlling
+                    </li>
+                    <li class="flex items-center text-neutral-800">
+                        <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        Extra Benefit for the first 2 months
+                    </li>
+                </ul>
+                <br />
+                <button type="button" id="pricingCardTwo" class="block mx-auto bg-neutral-800 text-neutral-200 my-10 py-2 px-10 rounded-lg hover:bg-neutral-900 hover:scale-125 transition-all">Order</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="fourth-image p-4 my-10 text-center">
+        <h1 data-aos="zoom-out" data-aos-easing="ease-in-out" data-aos-duration="1000" class="text-5xl font-sans font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-sky-950">Contact</h1>
+    </div>
+    <div class="container p-6">
+        <div class="content max-w-screen-md mx-auto p-6 bg-neutral-700 rounded-md shadow-lg shadow-gray-700">
+            <h1 class="text-4xl font-serif font-bold text-center text-neutral-300">Contact Us</h1>
+            <p class="font-serif text-neutral-400 text-center">
+                Sed tempus augue ac arcu tempus, at ultrices purus rhoncus. Quisque sit amet pharetra ligula. Donec tincidunt orci id facilisis ultrices.
+            </p>
+            <br />
+            <hr class="my-5" />
+            <form class="max-w-md mx-auto">
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
+                </div>
+                <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
+                    </div>
+                </div>
+                <div class="relative z-0 w-full">
+                    <div class="relative z-0 w-full mb-5 group">
+                        <textarea name="floating_text" id="floating_text" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required></textarea>
+                        <label for="floating_text" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Messages</label>
+                    </div>
+                </div>
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-neutral-900 border-t-1 border border-neutral-600 border-b-0 border-l-0 border-r-0">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="https://flowbite.com/" class="flex items-center">
+                        <img src="images/tailwind.png" class="h-8 me-3" alt="FlowBite Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Template <span class="text-sm text-neutral-500 font-semibold"><i>Made by Valerie</i></span></span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-neutral-400 uppercase">Resources</h2>
+                        <ul class="text-neutral-500 font-medium">
+                            <li class="mb-4">
+                                <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                            </li>
+                            <li>
+                                <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-neutral-400 uppercase">Follow us</h2>
+                        <ul class="text-neutral-500 font-medium">
+                            <li class="mb-4">
+                                <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                            </li>
+                            <li>
+                                <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-neutral-400 uppercase">Legal</h2>
+                        <ul class="text-neutral-500 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-neutral-200 sm:mx-auto dark:border-neutral-700 lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-neutral-500 sm:text-center dark:text-neutral-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">Valerie Attila Al-Fath™</a>. All Rights Reserved.
+                </span>
+                <div class="flex mt-4 sm:justify-center sm:mt-0">
+                    <a href="#" class="text-neutral-500 hover:text-neutral-900 dark:hover:text-white">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                            <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Facebook page</span>
+                    </a>
+                    <a href="#" class="text-neutral-500 hover:text-neutral-900 dark:hover:text-white ms-5">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 21 16">
+                            <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
+                        </svg>
+                        <span class="sr-only">Discord community</span>
+                    </a>
+                    <a href="#" class="text-neutral-500 hover:text-neutral-900 dark:hover:text-white ms-5">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 17">
+                            <path fill-rule="evenodd" d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Twitter page</span>
+                    </a>
+                    <a href="#" class="text-neutral-500 hover:text-neutral-900 dark:hover:text-white ms-5">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">GitHub account</span>
+                    </a>
+                    <a href="#" class="text-neutral-500 hover:text-neutral-900 dark:hover:text-white ms-5">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">Dribbble account</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        AOS.init();
+    </script>
+    <script type="text/javascript" charset="utf-8">
+        document.querySelectorAll('li a').forEach(menu => {
+            menu.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: "smooth"
+                })
+            })
+        });
+
+        document.getElementById('pricingCardOne').addEventListener('click', function() {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "Are you sure you want to buy this Package?",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Your package will be active soon!",
+                        icon: "success"
+                    });
+                }
+            });
+        });
+        document.getElementById('pricingCardTwo').addEventListener('click', function() {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "Are you sure you want to buy this Package?",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Your package will be active soon!",
+                        icon: "success"
+                    });
+                }
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js"></script>
+</body>
+</html>
